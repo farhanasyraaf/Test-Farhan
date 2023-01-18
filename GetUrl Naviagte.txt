@@ -1,0 +1,7 @@
+function redirectToLeadBulkEdit() {
+    var formType = Xrm.Page.ui.getFormType();
+    if (formType != 2) {
+        var leadBulkEditUrl = Xrm.Page.context.getClientUrl() + "/main.aspx?etc=4&pagetype=entityrecord&id=%7b" + Xrm.Page.data.entity.getId() + "%7d&extraqs=formid%3d" + "LeadBulkEditFormGUID" + "%26";
+        window.location.href = leadBulkEditUrl;
+    }
+}
